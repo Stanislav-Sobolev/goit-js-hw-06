@@ -12,4 +12,5 @@ for (let i = 0; i < ulCategories.length; i++) {
     
 }
 
- 
+// Alternative variant:
+// textHeader.forEach((header, index) => console.log("Category:", header.textContent));
