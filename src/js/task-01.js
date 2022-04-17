@@ -6,11 +6,16 @@ const textHeader = document.querySelectorAll("h2");
 
 const categoriesArr = document.querySelectorAll("ul#categories li.item ul");
 
-for (let i = 0; i < ulCategories.length; i++) {
-    console.log("Category:", textHeader[i].textContent);
-    console.log("Elements:", categoriesArr[i].children.length);
-    
-}
+
+const r = ulCategories.forEach(el => {
+    console.log("Category:", el.firstElementChild.textContent);
+    console.log("Elements:", el.lastElementChild.children.length);
+})
+
 
 // Alternative variant:
-// textHeader.forEach((header, index) => console.log("Category:", header.textContent));
+// for (let i = 0; i < ulCategories.length; i++) {
+//     console.log("Category:", textHeader[i].textContent);
+//     console.log("Elements:", categoriesArr[i].children.length);
+    
+// }
