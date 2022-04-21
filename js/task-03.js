@@ -13,13 +13,10 @@ const images = [
   },
 ];
 
+
+
 const parentList = document.querySelector("ul.gallery");
 
 const createList = images.map(element => {
-  const listElement = document.createElement("li");
-  listElement.innerHTML = `<img class="img" src="${element.url}" alt="${element.alt} ">`;
-return listElement;
-
+    return  parentList.insertAdjacentHTML("beforeend", `<li><img class="img" src="${element.url}" alt="${element.alt} "></li>`);
 });
-
-parentList.append(...createList);

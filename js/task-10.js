@@ -9,26 +9,37 @@ const divBox = document.querySelector("div#boxes");
 
 createBtn.addEventListener("click", (event) => {
   createBoxes(inputValue.value)  
-})
+});
+
 destroyBtn.addEventListener("click", () => {
   divBox.innerHTML = "";
-  
-})
+  arrBoxes.length = 0;
+  });
 
-function createBoxes(amount) {
-  const arrBoxes = [];
-  for (let i = 0; i <= amount; i++) {
+
+const arrBoxes = [];
+
+function createBoxes(amount) {  
+  
+  for (let i = 0; i < amount; i++) {
     const createBox = document.createElement("div");
-    createBox.style.width = `${i === 0 ? 30 : 30+(i * 10)}px`
-    createBox.style.height = `${i === 0 ? 30 : 30+(i * 10)}px`
+        
+    if (arrBoxes.length === 0) {
+      createBox.style.width = `30px`
+      createBox.style.height = `30px`
+    } else {
+      const lastIndexArr = arrBoxes.length - 1;
+      
+      createBox.style.width = `${parseInt(arrBoxes[lastIndexArr].style.width) + 10}px`
+      createBox.style.height = `${parseInt(arrBoxes[lastIndexArr].style.height) + 10}px`
+    }
+    
     createBox.style.backgroundColor = getRandomHexColor();
 
     arrBoxes.push(createBox);
+    
   }
   divBox.append(...arrBoxes)
 };
-
-
-
 
 
