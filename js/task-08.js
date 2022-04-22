@@ -20,5 +20,3 @@ submitBtn.addEventListener("submit", (event) => {
     console.log(userData);
     event.currentTarget.reset();
 }})
-
-

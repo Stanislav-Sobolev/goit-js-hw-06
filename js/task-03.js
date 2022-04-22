@@ -18,5 +18,8 @@ const images = [
 const parentList = document.querySelector("ul.gallery");
 
 const createList = images.map(element => {
-    return  parentList.insertAdjacentHTML("beforeend", `<li><img class="img" src="${element.url}" alt="${element.alt} "></li>`);
+  const result = `<li><img class="img" src="${element.url}" alt="${element.alt} "></li>`;
+  return  result;
 });
+
+parentList.insertAdjacentHTML("beforeend", createList.join(""));
